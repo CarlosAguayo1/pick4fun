@@ -14,8 +14,7 @@ import Login from "./pages/Login";
 import EventNew from "./pages/EventNew";
 import EventDetail from "./pages/EventDetail";
 import Profile from "./pages/Profile";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+
 
 export const router = createBrowserRouter(
     createRoutesFromElements(

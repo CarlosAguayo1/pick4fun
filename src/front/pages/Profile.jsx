@@ -46,7 +46,7 @@ export default function Profile() {
         if (user) {
           let parseUser = JSON.parse(user);
 
-          const res = await fetch(`${BASE}api/users/me/${parseUser.id}`, {
+          const res = await fetch(`${BASE}/api/users/me/${parseUser.id}`, {
             headers: {
               Authorization: `Bearer ${token}`,
             },
@@ -92,7 +92,7 @@ export default function Profile() {
       setSaving(true);
       let parseUser = JSON.parse(user);
 
-      const res = await fetch(`${BASE}api/users/me/${parseUser.id}`, {
+      const res = await fetch(`${BASE}/api/users/me/${parseUser.id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -138,7 +138,7 @@ export default function Profile() {
       return;
 
     try {
-      const res = await fetch(`${BASE}api/users/me`, {
+      const res = await fetch(`${BASE}/api/users/me`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` },
       });

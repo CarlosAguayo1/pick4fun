@@ -12,7 +12,7 @@ export default function HomePrivada() {
   // Función para cargar eventos
   const loadEvents = async () => {
     try {
-      const res = await fetch(`${BASE}api/events`);
+      const res = await fetch(`${BASE}/api/events`);
       const data = await res.json().catch(() => []);
       if (!res.ok) throw new Error(data.message || data.msg || `HTTP ${res.status}`);
       setEvents(data);
@@ -37,7 +37,7 @@ export default function HomePrivada() {
     }
 
     try {
-      const res = await fetch(`${BASE}api/events/${eventId}/join`, {
+      const res = await fetch(`${BASE}/api/events/${eventId}/join`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

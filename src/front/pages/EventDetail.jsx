@@ -40,7 +40,7 @@ export default function EventDetail() {
     let mounted = true;
     (async () => {
       try {
-        const res = await fetch(`${BASE}api/events/${id}`);
+        const res = await fetch(`${BASE}/api/events/${id}`);
         const data = await res.json().catch(() => ({}));
         if (!res.ok) throw new Error(data.message || data.msg || `HTTP ${res.status}`);
         if (mounted) setEvent(data);
@@ -62,7 +62,7 @@ export default function EventDetail() {
     }
     try  {
       setJoining(true);
-      const res = await fetch(`${BASE}api/events/${id}/join`, {
+      const res = await fetch(`${BASE}/api/events/${id}/join`, {
         method: "POST",
         headers: {
           "Content-type": "application/json",
